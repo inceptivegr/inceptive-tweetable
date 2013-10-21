@@ -1,0 +1,27 @@
+/*------------------------------------------------------------------------
+# css/style.css - Inceptive Tweetable Content Plugin
+# ------------------------------------------------------------------------
+# version   1.0
+# author    Inceptive Design Labs
+# copyright Copyright (C) 2013 Inceptive Design Labs. All Rights Reserved
+# license   GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html
+# website   http://extend.inceptive.gr
+-------------------------------------------------------------------------*/
+
+.tweetable {
+  padding: 3px;
+  background-color: #e9ebe4;
+  color: #000;
+}
+
+.tweetable:after {
+  content: url('../images/bird_gray_16.png');
+}
+
+.tweetable:hover {
+  background-color: #e2f1f9;
+}
+
+.tweetable:hover:after {
+  content: url('../images/bird_blue_16.png');
+}
