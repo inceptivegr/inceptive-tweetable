@@ -27,7 +27,7 @@ Inceptive-Tweetable
 	<li>Install the plugin following the standard procedure.</li>
 </ul>
 
-<h3>Shortcode usage</h3>
+<h2>Shortcode usage</h2>
 <ul>
 	<li>Create a new Joomla Article or K2 item</li>
 	<li>Insert a shortocode like [tweetable]This is a tweetable text[/tweetable]</li>
