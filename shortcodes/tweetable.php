@@ -12,8 +12,15 @@
 //no direct accees
 defined ('_JEXEC') or die('resticted aceess');
 
-Helix::addJS(array('jquery.tweetable.js'));
-Helix::addCSS(array('style.css'));
+$document = JFactory::getDocument();
+
+$path = strstr(realpath(dirname(__FILE__)), 'plugins');
+$path = str_replace("plugins", "", $path);
+$path = str_replace("shortcodes", "", $path);
+$path = JURI::root(true).'/plugins'.$path;
+
+$document->addStyleSheet($path.'css/style.css');
+$document->addScript($path.'js/jquery.tweetable.js');
 
 jimport('joomla.registry.registry');
 

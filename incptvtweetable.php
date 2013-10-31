@@ -22,18 +22,7 @@ class plgContentIncptvtweetable extends JPlugin {
     }
   
     public function onContentPrepare($context, &$article, &$params, $limitstart)
-    {
-		$helix = JPATH_PLUGINS.'/content/incptvtweetable/core/helix.php';
-		if (file_exists($helix)) {
-			require_once($helix);
-			Helix::getInstance();
-			Helix::getInstance()->loadHelixOverwrite();
-
-		} else {
-			echo JText::_('Helix framework not found.');
-			jexit();
-		}
-		
+    {		
 		if(  !JFactory::getApplication()->isAdmin() ){
 
 			$document = JFactory::getDocument();
@@ -44,7 +33,11 @@ class plgContentIncptvtweetable extends JPlugin {
 				$oldhead = $document->getHeadData();  // old head
 
 				$data =  $article->text;
-				Helix::getInstance()->importShortCodeFiles();
+				
+				$path = strstr(realpath(dirname(__FILE__)), 'plugins');
+				$path = str_replace("plugins", "", $path);
+				$path = JPATH_PLUGINS . $path;
+				$this->importShortCodeFiles($path);
 
 				$data = shortcode_unautop($data);
 				$data = do_shortcode($data); 
@@ -66,6 +59,25 @@ class plgContentIncptvtweetable extends JPlugin {
 			}
 		}
     }
+	
+	public function importShortCodeFiles($path)
+		{
+			
+			$shortcodes = array();
+			
+			$pluginshortcodes = glob( $path.'/shortcodes/*.php');
+
+			foreach((array) $pluginshortcodes as $value)  $shortcodes[] =   basename($value);
+
+			$shortcodes = array_unique($shortcodes);
+
+			require_once('core/wp_shortcodes.php');
+
+			foreach($shortcodes as $shortcode  )
+			{
+				require_once('shortcodes/'.$shortcode);
+			}
+		}
 }
 
 ?>
