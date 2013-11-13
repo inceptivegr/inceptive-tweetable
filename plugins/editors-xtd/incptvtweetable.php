@@ -23,6 +23,8 @@ class plgButtonIncptvTweetable extends JPlugin
             ";
         $document->addScriptDeclaration($jsCode);
         $button = new JObject();
+	$button->set('modal',false);
+	$button->set('class','btn');
         $button->set('text','Tweetable');
         $button->set('onclick', 'insertShortCode(\''.$name.'\')');
         $button->set('name', 'tweetable');

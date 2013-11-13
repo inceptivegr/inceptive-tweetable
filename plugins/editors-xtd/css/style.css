@@ -11,3 +11,7 @@
 .button2-left .tweetable {
     background: url(../images/j_button2_tweetable.png) 100% 0 no-repeat;
 }
+
+.icon-tweetable:before {
+	content: url(../images/bird_blue_16.png);
+}
