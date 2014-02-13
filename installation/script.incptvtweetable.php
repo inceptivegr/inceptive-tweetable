@@ -1,8 +1,7 @@
 <?php
 /*------------------------------------------------------------------------
-# installation/script.incptvtweetable.php - Inceptive Tweetable Content Plugin
+# Inceptive Tweetable Content Plugin
 # ------------------------------------------------------------------------
-# version   1.0
 # author    Inceptive Design Labs
 # copyright Copyright (C) 2013 Inceptive Design Labs. All Rights Reserved
 # license   GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html

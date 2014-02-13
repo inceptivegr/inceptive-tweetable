@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------------------------------------------
-# incptvtweetable.php - Inceptive Tweetable Content Plugin
+# Inceptive Tweetable Content Plugin
 # ------------------------------------------------------------------------
 # author    Inceptive Design Labs
 # copyright Copyright (C) 2013 Inceptive Design Labs. All Rights Reserved
@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 
 class plgContentIncptvtweetable extends JPlugin {
     
-    var $plg_copyrights_start		= "\n\n<!-- Inceptive \"Tweetable\" Content  Plugin (v1.0) starts here -->\n";
-    var $plg_copyrights_end		= "\n<!-- Inceptive \"Tweetable\" Content  Plugin (v1.0) ends here -->\n\n";
+    var $plg_copyrights_start		= "\n\n<!-- Inceptive \"Tweetable\" Content  Pluginstarts here -->\n";
+    var $plg_copyrights_end		= "\n<!-- Inceptive \"Tweetable\" Content  Pluginends here -->\n\n";
 
     function plgContentIncptvtweetable( &$subject )
     {
