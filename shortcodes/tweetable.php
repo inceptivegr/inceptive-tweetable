@@ -32,7 +32,8 @@ if(!function_exists('tweetable_sc')){
 		"style" =>'',
         "close" => true
      ), $atts));
-	 $data = '<span data-tweetable>'. do_shortcode( $content ) . '</span>';
+	 $rand = rand();
+	 $data = '<span data-tweetable id="incptvtweetable'.$rand.'">'. do_shortcode( $content ) . '</span>';
 	 
 	$plugin = JPluginHelper::getPlugin('content', 'incptvtweetable');    
 	$pluginParams = new JRegistry();
@@ -64,7 +65,7 @@ if(!function_exists('tweetable_sc')){
 	 $data .= '	<script>
 					var $incptv = jQuery.noConflict();
 					$incptv(document).ready(
-						$incptv(\'[data-tweetable]\').tweetable({
+						$incptv(\'#incptvtweetable'.$rand.'\').tweetable({
 							'.$options.'
 						})
 					);
